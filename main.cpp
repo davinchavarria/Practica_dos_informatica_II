@@ -60,7 +60,7 @@ y retorne dicho número. Escriba un programa de prueba.
 Ejemplo: si recibe la cadena “123”, debe retornar un int con valor 123.
 
 */
-
+/*
 int main(){
     char valor[100];// cadena caracteres a convertir
     cout<<" Ingresa En STRING tu VALOR : ";cin>> valor;// ciclo que itera hasta valor nulo
@@ -69,4 +69,16 @@ int main(){
 
     return 0;
 }
+*/
 
+int main(){
+char palabra[100];
+    cout << "Ingrese Palabra: ";cin >> palabra;
+    for (int i = 0; palabra[i] != '\0'; i++) {//iterar hasta valor nulo
+        if (palabra[i] <= 122 and palabra[i] >= 97) {// rango encontrar minusculas
+            palabra[i] -= 32;
+        }
+    }
+    cout << endl << "\nAll Palabras Mayusculas: " << palabra << endl;
+    return 0;
+}
