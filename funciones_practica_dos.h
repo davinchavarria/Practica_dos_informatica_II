@@ -3,5 +3,5 @@
 
 
 int total(int letra,int *letras);
-
+int transmutador_txt_int(char *valor);
 #endif // FUNCIONES_PRACTICA_DOS_H
