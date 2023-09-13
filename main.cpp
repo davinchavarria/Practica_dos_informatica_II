@@ -295,6 +295,37 @@ int main(){
 */
 /*
 Problema 15.
+Ejemplo: Si se ingresan los rectángulos A y B representados por los arreglos {0, 0, 8, 4} y {5, 2, 6, 7}, el rectángulo
+intersección C debe ser el arreglo {5, 2, 3, 2}.
+*/
+
+/*
+int recC[4];
+
+int main(){
+    int recA[4];
+    int recB[4];
+    int numA = 0;
+    int numB = 0;
+    cout << "Ingrese un numero de 4 digitos con los datos del rectangulo 1: ";
+    cin>>numA;
+    cout << "Ingrese un numero de 4 digitos con los datos del rectangulo 2: ";
+    cin>>numB;
+
+    separadorDigitos(numA, recA);
+    separadorDigitos(numB, recB);
+    cout << "El rectangulo interseccion C es: ";
+    rectan_C(recA, recB);
+
+    for(int i = 0; i < 4; i++){
+        cout << recC[i];
+    }
+    cout << endl;
+
+
+    return 0;
+}
+
 */
 
 /*
@@ -327,7 +358,7 @@ número y halle la suma de todos los números amigables menores al número ingre
 Nota: la salida del programa debe ser:
 El resultado de la suma es: 504.
 */
-
+/*
 int grupo_n[] = {};
 
 int main()
@@ -362,8 +393,7 @@ int main()
 
     return 0;
 }
-
-
+*/
 
 
 /*
