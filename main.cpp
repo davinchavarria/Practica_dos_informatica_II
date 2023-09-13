@@ -302,6 +302,7 @@ Escriba un programa que reciba un numero n y calcule el número de caminos posib
 Nota: la salida del programa debe ser:
 Para una malla de 2x2 puntos hay 6 caminos.
 */
+/*
 int main(){
     int ValorLados,fac1=1,fac2=1;
     cout<<"Ingrese  Valor De la matriz nXn:  ";cin>>ValorLados;
@@ -311,4 +312,42 @@ int main(){
             fac2*=(i*i) ;//fac2 = lado!*lado!
         }
     }cout<<"Para una malla de "<<ValorLados<<" x "<<ValorLados<<" puntos hay "<<fac1/fac2<<" caminos."<<endl;
+}
+*/
+/*
+Problema 18.
+Las permutaciones lexicográficas son permutaciones ordenadas numérica o alfabéticamente, por
+ejemplo las permutaciones lexicográficas de 0,1 y 2 son: 012, 021, 102, 120, 201, 210. Escribir un programa que
+reciba un número n y halle la enésima permutación lexicográfica de los números entre 0 y 9.
+
+Ejemplo: para n= 1000000, la permutación lexicográfica es 2783915460.
+Nota: la salida del programa debe ser:
+La permutacion numero 1000000 es: 2783915460.
+*/
+int main(){
+    char list[10]={'0','1','2','3','4','5','6','7','8','9'};
+    int list2[8]={362880,40320,5040,720,120,24,6,2};
+    int numero;
+    cout << "Ingresa tu numero" << endl;cin >> numero;//en el siguiente ciclo apartid de las permutaciones de cada indice calculamos indice a indice
+    for(int i = 0, digito; i < 8; i++){//cada indice tiene cierta permutacion dependiendo del factorial de la pocision
+        digito = numero / list2[i];//lo que hago es ir aproximando digito a digito hasta aproximar 8 pocisiones
+        numero = numero - ((list2[i])*digito);
+        if(numero == 0){
+            digito = digito - 1;
+        }cout << list[digito];
+        for(int j = digito; j < 9; j++){
+            list[j] = list[j+1];
+        }list[9]='\0';
+    }
+     // Imprimir valores restantes
+    if (numero == 1) {
+        for (int i = 0; i < 9; i++) {
+            cout << list[i];
+        }
+    } else if (numero == 0) {
+        for (int i = 8; i >= 0; i--) {
+            cout << list[i];
+        }
+    }
+    return 0;
 }
