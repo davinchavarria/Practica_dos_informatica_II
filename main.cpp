@@ -53,12 +53,10 @@ int main ()
 
 /*
 Problema 4.
-
 Haga una función que reciba una cadena de caracteres numéricos, la convierta a un número entero
 y retorne dicho número. Escriba un programa de prueba.
 
 Ejemplo: si recibe la cadena “123”, debe retornar un int con valor 123.
-
 */
 /*
 int main(){
@@ -71,14 +69,50 @@ int main(){
 }
 */
 
+/*
+Problema 6.
+Escriba un programa que reciba una cadena de caracteres y cambie las letras minúsculas por
+mayúsculas, los demás caracteres no deben ser alterados.
+
+Ejemplo: se recibe Man-zana debe mostrar MAN-ZANA.
+Nota: la salida del programa debe ser: Original: Man-zana. En mayuscula: MAN-ZANA.
+*/
+/*
 int main(){
 char palabra[100];
     cout << "Ingrese Palabra: ";cin >> palabra;
     for (int i = 0; palabra[i] != '\0'; i++) {//iterar hasta valor nulo
-        if (palabra[i] <= 122 and palabra[i] >= 97) {// rango encontrar minusculas
+        if (palabra[i] <= 122 and palabra[i] >= 97) {//rango encontrar minusculas
             palabra[i] -= 32;
         }
     }
     cout << endl << "\nAll Palabras Mayusculas: " << palabra << endl;
     return 0;
 }
+*/
+
+/*
+Problema 8. Escriba un programa que reciba una cadena de caracteres y separe los números del resto de caracteres,
+generando una cadena que no tiene números y otra con los números que había en la cadena original.
+
+Ejemplo: Si se recibe abc54rst el programa debe imprimir las cadenas: abcrst y 54.
+Nota: la salida del programa debe ser:
+Original: abc54rst.
+Texto: abcrst. Numero: 54.
+*/
+
+int main(){
+char palabra[25]; char pal2[25] ;char num[25];
+    cout << "Ingrese Palabra: ";cin >> palabra;
+    cout<<"original: "<<palabra;
+    for (int i = 0, ip=0,in=0; palabra[i] != '\0'; i++) {// iterar hasta valor nulo
+        if (palabra[i] > 65 and  palabra[i] < 122) {// rango determinar si es letra
+            pal2[ip] = palabra[i];ip++;
+        }else if (palabra[i]> 47 and 58>palabra[i]){// rango sis es numero
+            num[in]= palabra[i];in++;
+        }
+    }
+    cout << endl << "\nSolo Texto : " << pal2 <<"\nNumeros : "<<num<<endl;
+    return 0;
+}
+
