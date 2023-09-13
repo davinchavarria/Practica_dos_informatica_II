@@ -294,6 +294,10 @@ int main(){
 }
 */
 /*
+Problema 15.
+*/
+
+/*
 Problema 16.
 En una malla de 2x2, realizando únicamente movimientos hacia la derecha y hacia abajo hay 6
 posibles caminos para llegar de la esquina superior izquierda a la inferior derecha como se observa en la Figura 7.
@@ -314,6 +318,54 @@ int main(){
     }cout<<"Para una malla de "<<ValorLados<<" x "<<ValorLados<<" puntos hay "<<fac1/fac2<<" caminos."<<endl;
 }
 */
+
+/*
+Problema 17. Dos números a y b (a != b) son amigables si la suma de los divisores de a (excluyéndose el mismo)
+es igual a b, y viceversa. Ej: los divisores de 220 son 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 y 110; y suman 284. Los divisores
+de 284 son 1, 2, 4, 71 y 142; y suman 220. Entonces 220 y 284 son amigables. Escribir un programa que reciba un
+número y halle la suma de todos los números amigables menores al número ingresado.
+Nota: la salida del programa debe ser:
+El resultado de la suma es: 504.
+*/
+
+int grupo_n[] = {};
+
+int main()
+{
+    int num = 1184;
+    cout << "Ingrese numero: "; cin >> num;
+    int contador = 1;
+    int b = 1;
+    int suma = 0;
+    int posicion = 0;
+
+
+    for(int a = 1; a <= num; a++){
+        b = sumaDivisores(a);
+        if(sumaDivisores(b) == a){
+            if(a != b){
+                if(buscaNumero(grupo_n, b) == false){
+                    contador++;
+                    //cout << "Numeros amigables: " << a << endl;
+                    //cout << "Numeros amigables: " << b << endl;
+                    suma = suma + a + b;
+                    grupo_n[posicion] = a;
+                    posicion++;
+                    grupo_n[posicion] = b;
+                    posicion++;
+                }
+            }
+        }
+    }
+
+    cout << "La suma de los  numeros amigables: " << suma << endl;
+
+    return 0;
+}
+
+
+
+
 /*
 Problema 18.
 Las permutaciones lexicográficas son permutaciones ordenadas numérica o alfabéticamente, por
@@ -324,6 +376,7 @@ Ejemplo: para n= 1000000, la permutación lexicográfica es 2783915460.
 Nota: la salida del programa debe ser:
 La permutacion numero 1000000 es: 2783915460.
 */
+/*
 int main(){
     char list[10]={'0','1','2','3','4','5','6','7','8','9'};
     int list2[8]={362880,40320,5040,720,120,24,6,2};
@@ -351,3 +404,4 @@ int main(){
     }
     return 0;
 }
+*/

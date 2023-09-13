@@ -23,4 +23,23 @@ int transmutador_txt_int(char *valor){
     }
     return entero;
 }
+int sumaDivisores(int num){
+    int suma = 0;
+    for(int i = 1; i < num; i++){
+        if(num % i == 0){
+            suma = suma + i;
+        }
+    }
+    return suma;
+}
+
+bool buscaNumero(int *grupo, int b){
+    int tamano = sizeof(grupo);
+    for(int i = 0; i < tamano; i++){
+        if(grupo[i] == b){
+            return true;
+        }
+    }
+    return false;
+}
 
