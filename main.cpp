@@ -100,7 +100,7 @@ Nota: la salida del programa debe ser:
 Original: abc54rst.
 Texto: abcrst. Numero: 54.
 */
-
+/*
 int main(){
 char palabra[25]; char pal2[25] ;char num[25];
     cout << "Ingrese Palabra: ";cin >> palabra;
@@ -115,4 +115,46 @@ char palabra[25]; char pal2[25] ;char num[25];
     cout << endl << "\nSolo Texto : " << pal2 <<"\nNumeros : "<<num<<endl;
     return 0;
 }
+*/
+/*
+Problema 10.
+Escribir un programa que permita convertir un número en el sistema romano al sistema arábigo
+usado actualmente. A continuación se encuentran los caracteres usados en el sistema romano y su equivalente ará-
+bigo:
 
+M: 1000
+D: 500
+C: 100
+L: 50
+X: 10
+V: 5
+I: 1
+
+Los números romanos se forman usando estos caracteres en base a dos reglas:
+Si un carácter esta seguido por uno de igual o menor valor, su valor se suma al total.
+Si un carácter esta seguido por uno de mayor valor, su valor se resta del total.
+
+Ejemplo: CC=200, CD=400, DC=600, DCLXVI=666, CLXXIV=174.
+Nota: la salida del programa debe ser:
+El número ingresado fue: DCLXVI
+Que corresponde a: 666.
+*/
+int main(){
+    bool flag = false;int valor =0;
+    char NumerosRomanos[7] = { 'M','D','C','L','X','V','I' };string numrom;
+    int NumerosArabes[7] = { 1000,500,100,50,10,5,1 };
+    cout<<"Ingresa Numero En Romano\n";cin>>numrom;
+
+    for(int i = 0; numrom[i]!= '\0';i++){// iteramos hasta valor nulo de la cadena
+        for(int ii = 0 ; NumerosRomanos[ii] != '\0'; ii++){// itera sobre valores romanos
+            if(numrom[i]==NumerosRomanos[ii]){//comprobamos si el cada caractes es valido
+                valor += NumerosArabes[ii];
+                flag=true;
+            }// si el caracter no es valido ingresar cadena nuevamente , contador se reinicia en 0
+        }if(flag==false){
+            cout<<" Numero No Valido Ingrsa Nuevamente : ";cin>> numrom;i=-1;
+        }
+    }
+    cout<< " Su Numero Romano : "<< numrom << " Es Igual a "<<valor <<" En Numero Romano"<<endl;
+    return 0;
+}
