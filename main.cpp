@@ -266,6 +266,7 @@ int main() {
 Problema 14. Elabore un programa que llene una matriz 5x5 con los números del 1 al 25 y la imprima, luego
 imprima la matriz rotada 90, 180 y 270 grados.
 */
+/*
 void rotar(int matriz[5][5],int matrizrotar[5][5]){// funcion para rotar matriz 90 grados
     for(int i = 4,io=0,val=1;i>=0; i--,io++){
         for(int j= 0,jo=0;j<5; j++,jo++){
@@ -290,4 +291,24 @@ int main(){
         }
     }cout<<endl;
  rotar(matriz,matriz9); rotar(matriz9,matriz18); rotar(matriz18,matriz27);
+}
+*/
+/*
+Problema 16.
+En una malla de 2x2, realizando únicamente movimientos hacia la derecha y hacia abajo hay 6
+posibles caminos para llegar de la esquina superior izquierda a la inferior derecha como se observa en la Figura 7.
+
+Escriba un programa que reciba un numero n y calcule el número de caminos posibles en una cuadricula de nxn.
+Nota: la salida del programa debe ser:
+Para una malla de 2x2 puntos hay 6 caminos.
+*/
+int main(){
+    int ValorLados,fac1=1,fac2=1;
+    cout<<"Ingrese  Valor De la matriz nXn:  ";cin>>ValorLados;
+    for(int i = 1; i <= ValorLados*2; i++){//utilizamos formula que se basa en los lados fac1/fac2
+        fac1 *=i;// formula se basa en calcula factoriales fac1 = (lado + lado )!
+        if(i<=ValorLados){
+            fac2*=(i*i) ;//fac2 = lado!*lado!
+        }
+    }cout<<"Para una malla de "<<ValorLados<<" x "<<ValorLados<<" puntos hay "<<fac1/fac2<<" caminos."<<endl;
 }
