@@ -23,7 +23,7 @@ int transmutador_txt_int(char *valor){
     }
     return entero;
 }
-int sumaDivisores(int num){
+int sumaDivisores(int num){//Suma los divisores de un numero dado
     int suma = 0;
     for(int i = 1; i < num; i++){
         if(num % i == 0){
@@ -33,15 +33,16 @@ int sumaDivisores(int num){
     return suma;
 }
 
-bool buscaNumero(int *grupo, int b){
-    int tamano = sizeof(grupo);
-    for(int i = 0; i < tamano; i++){
+bool buscaNumero(int *grupo, int b){//recibe un puntero y un numero entero
+    int tamano = sizeof(grupo);//miramosel tamaño de la lista
+    for(int i = 0; i < tamano; i++){// iteramos entre el tamaño de la lista para encontrar a b
         if(grupo[i] == b){
-            return true;
+            return true;//retornamos que si esta en la lista
         }
     }
-    return false;
+    return false;//sino retornamos falso
 }
+
 void rectan_C(int recA[], int recB[]){
     int *ptrC = recC;
     int x = 0; // Coordenadas en el eje x.

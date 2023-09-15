@@ -340,7 +340,7 @@ Para una malla de 2x2 puntos hay 6 caminos.
 /*
 int main(){
     int ValorLados,fac1=1,fac2=1;
-    cout<<"Ingrese  Valor De la matriz nXn:  ";cin>>ValorLados;
+    cout<<"Ingrese  Valor De la matriz nXn:  ";cin>>ValorLados;// se almacena el tamaño de
     for(int i = 1; i <= ValorLados*2; i++){//utilizamos formula que se basa en los lados fac1/fac2
         fac1 *=i;// formula se basa en calcula factoriales fac1 = (lado + lado )!
         if(i<=ValorLados){
@@ -351,15 +351,18 @@ int main(){
 */
 
 /*
-Problema 17. Dos números a y b (a != b) son amigables si la suma de los divisores de a (excluyéndose el mismo)
-es igual a b, y viceversa. Ej: los divisores de 220 son 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 y 110; y suman 284. Los divisores
-de 284 son 1, 2, 4, 71 y 142; y suman 220. Entonces 220 y 284 son amigables. Escribir un programa que reciba un
+Problema 17.
+Dos números a y b (a != b) son amigables si la suma de los divisores de a (excluyéndose el mismo)
+es igual a b, y viceversa.
+Ej: los divisores de 220 son 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 y 110; y suman 284.
+Los divisores de 284 son 1, 2, 4, 71 y 142; y suman 220.
+Entonces 220 y 284 son amigables. Escribir un programa que reciba un
 número y halle la suma de todos los números amigables menores al número ingresado.
 Nota: la salida del programa debe ser:
 El resultado de la suma es: 504.
 */
 /*
-int grupo_n[] = {};
+int grupo_n[] = {};//Lista bacia para los numeros amigables
 
 int main()
 {
@@ -372,24 +375,22 @@ int main()
 
 
     for(int a = 1; a <= num; a++){
-        b = sumaDivisores(a);
-        if(sumaDivisores(b) == a){
-            if(a != b){
-                if(buscaNumero(grupo_n, b) == false){
+        b = sumaDivisores(a);//suma de los divisores de a
+        if(sumaDivisores(b) == a){//comprobamos si la suma de los divisores de b es igual a a
+            if(a != b){ //y si a es diferente de b
+                if(buscaNumero(grupo_n, b) == false){//si el b esta en la lista
                     contador++;
-                    //cout << "Numeros amigables: " << a << endl;
-                    //cout << "Numeros amigables: " << b << endl;
-                    suma = suma + a + b;
-                    grupo_n[posicion] = a;
-                    posicion++;
-                    grupo_n[posicion] = b;
-                    posicion++;
+                    suma = suma + a + b;//sumamos los numeros amigos
+                    grupo_n[posicion] = a;//agregamos a a la lista de numeros amigos
+                    posicion++;//sumamos en uno la posicion
+                    grupo_n[posicion] = b;//agregamos a b a la lista de numeros amigos
+                    posicion++;//aumentamos la posicion de la lista
                 }
             }
         }
     }
 
-    cout << "La suma de los  numeros amigables: " << suma << endl;
+    cout << "La suma de los  numeros amigables: " << suma << endl;//Imprimimos la suma
 
     return 0;
 }
@@ -408,8 +409,8 @@ La permutacion numero 1000000 es: 2783915460.
 */
 /*
 int main(){
-    char list[10]={'0','1','2','3','4','5','6','7','8','9'};
-    int list2[8]={362880,40320,5040,720,120,24,6,2};
+    char list[10]={'0','1','2','3','4','5','6','7','8','9'};//lista de numeros del 0 al 9
+    int list2[8]={362880,40320,5040,720,120,24,6,2};//
     int numero;
     cout << "Ingresa tu numero" << endl;cin >> numero;//en el siguiente ciclo apartid de las permutaciones de cada indice calculamos indice a indice
     for(int i = 0, digito; i < 8; i++){//cada indice tiene cierta permutacion dependiendo del factorial de la pocision
